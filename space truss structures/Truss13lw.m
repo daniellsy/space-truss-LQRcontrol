@@ -19,7 +19,7 @@ dx=0.3;%伸长方向上的一节的长度
 dy=0.4;%宽度方向上一节的长度
 m=21;%节数 
 mn=0;%接头质量
-mtop=0;
+mtop=15;
 gNode=zeros((m+1)*4,3);    
 for i=1:m+1
       gNode((i-1)*4+1,1:3)=[dx*(i-1),0,0];  %节点坐标（x,y,z）
@@ -69,7 +69,7 @@ end
     
     % 计算单元刚度矩阵k，并组装到整体矩阵中
     for ie=1:1:element_number
-       [ke,me] = ElementMatrix2(ie,m,gnum,mn,mtop);
+       [ke,me] = ElementMatrix(ie,m,gnum,mn,mtop);
        AssembleMatrix(ie,ke,me);
     end
     

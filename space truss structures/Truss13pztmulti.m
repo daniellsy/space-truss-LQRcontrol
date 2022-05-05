@@ -20,7 +20,7 @@ gpMaterial=[7600 7.07e-4 6.3e10 0.16 140 6.35e-10 1.5e-8 8000 6.283e-5 21e10 0.1
 %           roup    Ap     Ep    lp   np   d33     miup   rou    A       E    l
 dx=0.3;%伸长方向上的一节的长度
 dy=0.4;%宽度方向上一节的长度
-m=21;%节数 
+m=21;%节数
 mn=0;%接头质量
 mtop=0;
 gNode=zeros((m+1)*4,3);    
