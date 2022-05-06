@@ -26,7 +26,7 @@ global gNode gElement gMaterial
                  -nx*lx  -nx*mx  -nx*nx  nx*lx  nx*mx  nx*nx ];
      me=density*A*L/6*[2 0 0 1 0 0;0 2 0 0 1 0;0 0 2 0 0 1;1 0 0 2 0 0
                 0 1 0 0 2 0;0 0 1 0 0 2 ];
-     if ie==1||ie==3||ie==5
+     if ie==1||ie==3||ie==5||ie==7
      k=Kn*[ lx*lx  lx*mx  lx*nx  -lx*lx  -lx*mx  -lx*nx
                  mx*lx  mx*mx  mx*nx  -mx*lx  -mx*mx  -mx*nx
                  nx*lx  nx*mx  nx*nx  -nx*lx  -nx*mx  -nx*nx

@@ -74,7 +74,7 @@ end
     for ie=1:1:element_number
        [Kuu,ke,me]=ElementMatrixpzt(ie,m,gnum,mn,mtop,M,Kn,Ku);
        AssembleMatrix(ie,ke,me);
-       if ie==1||ie==3||ie==5
+       if ie==1||ie==3||ie==5||ie==7
           Vout(ie,Kuu);
           cont=cont+1;
        end
