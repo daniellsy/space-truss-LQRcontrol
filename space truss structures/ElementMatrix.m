@@ -1,4 +1,4 @@
-function [k,ma] = ElementMatrix(ie,m,gnum,mn,mtop)
+ function [k,ma] = ElementMatrix(ie,m,gnum,mn,mtop)
 global gNode gElement gMaterial
      n= gElement(ie, 3);
      E = gMaterial( n, 1 ) ;
