@@ -36,8 +36,8 @@ Q=5000*eye(2*mode);
 R=0.01*eye(num);
 G1=lqr(A,B,Q,R);
 A1=A-B*G1;
-vp=83;%给定一点
-vt=80;%观测点
+vp=84;%给定一点
+vt=83;%观测点
 % v=1e-2;
 % x(size+(vp-1)*3+1)=v;
 f=zeros(len,1);x=zeros(mode*2,1);x2=zeros(mode*2,1);
@@ -76,7 +76,7 @@ y=fft(wy);
 ft=(0:length(y)-1)*1000/length(y);
 plot(tc,wy,'--','LineWidth',0.6,'color','k');
 hold on;
-plot(tc,wy2,'LineWidth',1,'color','r');
+plot(tc,wy2,'LineWidth',1.4,'color','r');
 xlabel('t/s');ylabel('w/m');
 title('VibyMag');
 legend('uncontrolled state','controlled state');
@@ -85,7 +85,7 @@ legend('uncontrolled state','controlled state');
 figure(2)
 plot(tc,wz,'--','LineWidth',0.6,'color','k');
 hold on;
-plot(tc,wz2,'LineWidth',1,'color','r');
+plot(tc,wz2,'LineWidth',1.4,'color','r');
 xlabel('t/s');ylabel('w/m');
 title('VibzMag');
 legend('uncontrolled state','controlled state');
