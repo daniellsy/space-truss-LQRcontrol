@@ -43,7 +43,7 @@ vt=83;%¹Û²âµã
 f=zeros(len,1);x=zeros(mode*2,1);x2=zeros(mode*2,1);
 i=1;h=0.001;
 for t=0:h:10
-f1=sin(2*pi*53*t);
+f1=50*sin(2*pi*11*t);
 f((vp-1)*3+3)=f1;
 F=[zeros(mode,1);v'*f];
 K1=A*x+F;
