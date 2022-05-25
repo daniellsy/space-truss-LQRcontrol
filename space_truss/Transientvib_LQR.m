@@ -1,6 +1,6 @@
 clear;clc;
 load para.mat;
-mode=6;%截断模态数
+mode=10;%截断模态数
 num=size(gVout,2);%压电数目
 v=v(:,1:mode);
 M=v'*gM*v;
@@ -44,6 +44,7 @@ f=zeros(len,1);x=zeros(mode*2,1);x2=zeros(mode*2,1);
 % a1=0.01;a2=0.01;%mode initial value
 % x(1)=a1;x(2)=a2;
 % x2(1)=a1;x2(2)=a2;
+save A1.mat A1;save G1.mat G1;
 i=1;h=0.001;
 for t=0:h:10
 if t<=0.05

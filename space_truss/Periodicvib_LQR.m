@@ -1,6 +1,6 @@
 clear;clc;
 load para.mat;
-mode=6;%截断模态数
+mode=10;%截断模态数
 num=size(gVout,2);%压电数目
 v=v(:,1:mode);
 M=v'*gM*v;
@@ -31,6 +31,8 @@ end
 Vout0=v'*gVout;
 A=[zeros(mode) eye(mode);-Kn -C0];
 B=[zeros(mode,num);v'*gVout];
+Bu=v'*gVout;
+save Bu.mat Bu;
 % C=[gSout*v zeros(1,mode)];
 Q=5000*eye(2*mode);
 R=0.01*eye(num);
