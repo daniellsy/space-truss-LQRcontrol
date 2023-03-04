@@ -1,8 +1,8 @@
-% 绘制振型图
+% plot mode of vibration
 m = length(v)/3;
-j=1; % 第几阶
-k = 2;  % 放大系数
-n = length(gNode(:,1))/4; % 共4*n个节点
+j = 3; % frequency number
+k = 1;  % scale
+n = length(gNode(:,1))/4; % for the square type--the pitch number 
 
 for i=1:m/4
     x(4*(i-1)+1:4*(i-1)+4) = dx*i;
@@ -21,7 +21,7 @@ yy = gNode(:,2)+y1';
 z1=[zeros(1,4),z];
 zz = gNode(:,3)+z1';
 
-% 邻接矩阵
+% link matrix
 A1 = [0 1 0 1;
       1 0 1 0;
       0 1 0 1;
@@ -45,7 +45,7 @@ figure(1)
 gplot3(A,coord1,'color','black')
 axis equal
 axis([0 6.5 -1.5 1.9 -1.5 1.9]);
-str = sprintf('第%1d阶振型图',j);
-title(str);grid on
-xlabel('x轴');ylabel('y轴');zlabel('z轴')
+%str = sprintf('the mode of vibration');
+title (sprintf ("num %d mode of vibration", j));grid on
+xlabel('x axis');ylabel('y axis');zlabel('z axis')
 % plot3(xx,yy,zz);

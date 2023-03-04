@@ -20,9 +20,9 @@ gpMaterial=[7600 7e-4 6.3e10 0.16 150 6.45e-10 1.5e-8 8000 6.283e-5 21e10 0.1];
 %           roup    Ap     Ep    lp   np   d33     miup   rou    A       E    l
 dx=0.3;%伸长方向上的一节的长度
 dy=0.4;%宽度方向上一节的长度
-m=16;%节数
-mn=0;%接头质量
-mtop=0;
+m=21;%节数
+mn=0.4;%接头质量
+mtop=5;
 gNode=zeros((m+1)*4,3);    
 for i=1:m+1
       gNode((i-1)*4+1,1:3)=[dx*(i-1),0,0];  %节点坐标（x,y,z）
@@ -82,7 +82,7 @@ end
 % 处理约束条件
 gK=BoundaryConditions(gBC,gK);  %缩减后的整体刚度矩阵
 gM=BoundaryConditions(gBC,gM);  %缩减后的整体质量矩阵
-gVout=BC2(gBC,gVout);  %缩减后的整体质量矩阵
+gVout=BC2(gBC,gVout);  %压电输出矩阵
 % 求固有频率及振型
 [v,d]=eig(gK,gM);  
 tempd=diag(d);
