@@ -1,7 +1,7 @@
 % plot mode of vibration
 m = length(v)/3;
-j = 3; % frequency number
-k = 1;  % scale
+j = 10; % frequency number
+k = 4;  % scale
 n = length(gNode(:,1))/4; % for the square type--the pitch number 
 
 for i=1:m/4

@@ -22,7 +22,7 @@ dx=0.3;%伸长方向上的一节的长度
 dy=0.4;%宽度方向上一节的长度
 m=21;%节数
 mn=0.4;%接头质量
-mtop=5;
+mtop=0;
 gNode=zeros((m+1)*4,3);    
 for i=1:m+1
       gNode((i-1)*4+1,1:3)=[dx*(i-1),0,0];  %节点坐标（x,y,z）
@@ -90,7 +90,7 @@ tempd=diag(d);
 v=v(:,sortindex);
 save para.mat gK gM gVout v;
 save gnode.mat gNode gBC;
-mode_number=1:20;    %关注的模态数
+mode_number=1:10;    %关注的模态数
 frequency(mode_number)=sqrt(nd(mode_number))/2/pi;
 frequency = frequency';
 toc;
